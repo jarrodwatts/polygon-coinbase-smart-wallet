@@ -71,8 +71,8 @@ export default function Home() {
             // What chains we want to support in our app
             chains: [chainToUse],
             appMetadata: {
-              logoUrl: `https://d391b93f5f62d9c15f67142e43841acc.ipfscdn.io/ipfs/bafybeiepghb2jvinjgmwab3sa3rm2t3zun5jigbhgvdl64mnsjwevupg7q/wizard-hat.png`,
-              name: "Coinbase Smart Wallet on Polygon",
+              logoUrl: `https://github.com/jarrodwatts/polygon-coinbase-smart-wallet/blob/main/public/wizard-hat.png?raw=true`,
+              name: "Polygon 💜🤝 Coinbase Smart Wallet",
               description: "Mint NFTs on Polygon using Coinbase Smart Wallet",
             },
           }),
@@ -84,11 +84,6 @@ export default function Home() {
           sendSponsoredTransaction()
         }
         payModal={false}
-        onTransactionConfirmed={() => alert("Transaction successful")}
-        onError={(error) => {
-          console.error(error);
-          alert("Transaction failed");
-        }}
       >
         Mint NFT
       </TransactionButton>
