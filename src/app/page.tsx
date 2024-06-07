@@ -12,6 +12,8 @@ import { useSendCalls } from "thirdweb/wallets/eip5792";
 
 // Import and set the the blockchain you want to use.
 // Only certain chains supported: https://www.smartwallet.dev/FAQ#what-networks-are-supported
+// NOTE: To use mainnet chains, you need to add a credit card to your thirdweb account.
+// To use testnets, such as baseSepolia, no card is required.
 import { polygon } from "thirdweb/chains";
 const chainToUse = polygon;
 

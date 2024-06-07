@@ -3,49 +3,54 @@
 </h1>
 
 <p align="center">
-  Sponsor Coinbase Smart Wallet transactions with paymasters on Polygon Proof of Stake chain.
+  Sponsor Coinbase Smart Wallet transactions with paymasters on Polygon Proof of Stake chain. 
 </p>
 
-<div align="center">
-  <img src="./public/demo.gif" height="260px" alt="Demo"/>
-</div>
-<pre align="center">
-  Demo of the application
-</pre>
+<p>
+<ul>
+    <li>🔗 Connect to the application via Coinbase Smart Wallet.</li>
+    <li>💸 Perform transactions from your newly created wallet.</li>
+    <li>🚫 Pay no gas fees! Thanks to the power of paymasters to cover user's gas fees.</li>
+</ul>
+</p>
 
-## What is EVM Kit?
+<p>
+<a href="https://polygon-coinbase-smart-wallet.vercel.app/" target="_blank">Try the Live Demo</a>!
+</p>
 
-# Getting Started with Coinbase Smart Wallet
+<figure align="center">
+  <img src="./public/demo.gif" height="320px" alt="Demo"/>
+  <figcaption align="center">
+    <a href="https://polygon-coinbase-smart-wallet.vercel.app/" target="_blank">Try the Live Demo</a>!
+  </figcaption>
+</figure>
 
-This repository contains a simple Next.js application where users can:
+## Using this Repository
 
-- Connect to the application via Coinbase Smart Wallet.
-- Perform transactions from their newly created wallet.
-- Pay no gas fees! Thanks to the power of paymasters to cover user's gas fees.
+I have written a full tutorial on how to build this application from scratch. [Read the tutorial](TODO)!
 
-## Live Demo
+To get started locally:
 
-Try the live demo [here](https://polygon-coinbase-smart-wallet.vercel.app/)
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository.
 
-## Setting Up the Project
+2. Install dependencies with `pnpm install`.
 
-1. Clone the repository.
-2. Install the dependencies using `pnpm install`.
-3. Get a thirdweb API key from the [thirdweb dashboard](https://dashboard.thirdweb.com/).
-4. Replace the placeholder value in the `src/app/page.tsx` file with your thirdweb client ID.
+3. Create a [thirdweb API key](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) on the thirdweb dashboard.
 
-## Running the Application
+4. Create a `.env.local` file in the root of the project and add the following: `NEXT_PUBLIC_THIRDWEB_CLIENT_ID=your-thirdweb-client-id-goes-here`.
 
-Run `pnpm run dev` and visit http://localhost:3000/ in your browser.
+5. On the [page.tsx](./src/app/page.tsx) file, set what chain you want to use (from the list of [supported chains](https://www.smartwallet.dev/FAQ#what-networks-are-supported)). **Note**: You need to add a **credit card** to your thirdweb account _if_ you want to use mainnet chains. To use testnets such as `baseSepolia`, you don't need to add a credit card.
 
-## Submitting Transactions from Coinbase Smart Wallet
+   ```tsx
+   // The default is polygon mainnet, which requires a credit card on your thirdweb account.
+   import { polygon } from "thirdweb/chains";
+   const chainToUse = polygon;
+   ```
 
-The application includes a simple smart contract interaction with the connected wallet. It uses a simple Edition Drop smart contract that allows users to mint NFTs for free.
+6. For mainnet use, configure [paymaster rules](https://thirdweb.com/dashboard/connect/account-abstraction) on the thirdweb dashboard.
 
-## Sponsoring User Gas Fees with a Paymaster
+7. Run the application with `pnpm run dev` and visit http://localhost:3000/ in your browser.
 
-The application uses paymasters to sponsor the gas fees of user transactions. This is accomplished using the `useSendCalls` hook from the thirdweb SDK.
+### Devs do something
 
-## Under the Hood of Coinbase Smart Wallet
-
-Coinbase Smart Wallet combines several account abstraction techniques to operate under the hood. It uses ERC-4337 account abstraction, which allows the gas fee of a transaction to be "sponsored" (paid for) by a different wallet than the one submitting the transaction.
+Reach out to me on Twitter [@jarrodwattsdev](https://twitter.com/jarrodwattsdev) or open an issue on this repository for any questions or feedback.
