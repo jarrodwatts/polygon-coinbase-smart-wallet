@@ -14,10 +14,6 @@
 </ul>
 </p>
 
-<p>
-<a href="https://polygon-coinbase-smart-wallet.vercel.app/" target="_blank">Try the Live Demo</a>!
-</p>
-
 <figure align="center">
   <img src="./public/demo.gif" height="320px" alt="Demo"/>
   <figcaption align="center">
