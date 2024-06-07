@@ -27,7 +27,7 @@
 
 ## Using this Repository
 
-I have written a full tutorial on how to build this application from scratch. [Read the tutorial](TODO)!
+I have written a full tutorial on how to build this application from scratch. [Read the tutorial](https://blog.jarrodwatts.com/get-started-with-coinbase-smart-wallet)!
 
 To get started locally:
 
