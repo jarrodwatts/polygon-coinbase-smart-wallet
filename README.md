@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  Polygon 💜🤝 Coinbase Smart Wallet
+</h1>
 
-## Getting Started
+<p align="center">
+  Sponsor Coinbase Smart Wallet transactions with paymasters on Polygon Proof of Stake chain.
+</p>
 
-First, run the development server:
+<div align="center">
+  <img src="./public/demo.gif" height="260px" alt="Demo"/>
+</div>
+<pre align="center">
+  Demo of the application
+</pre>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What is EVM Kit?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Getting Started with Coinbase Smart Wallet
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This repository contains a simple Next.js application where users can:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Connect to the application via Coinbase Smart Wallet.
+- Perform transactions from their newly created wallet.
+- Pay no gas fees! Thanks to the power of paymasters to cover user's gas fees.
 
-## Learn More
+## Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+Try the live demo [here](https://polygon-coinbase-smart-wallet.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setting Up the Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository.
+2. Install the dependencies using `pnpm install`.
+3. Get a thirdweb API key from the [thirdweb dashboard](https://dashboard.thirdweb.com/).
+4. Replace the placeholder value in the `src/app/page.tsx` file with your thirdweb client ID.
 
-## Deploy on Vercel
+## Running the Application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run `pnpm run dev` and visit http://localhost:3000/ in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Submitting Transactions from Coinbase Smart Wallet
+
+The application includes a simple smart contract interaction with the connected wallet. It uses a simple Edition Drop smart contract that allows users to mint NFTs for free.
+
+## Sponsoring User Gas Fees with a Paymaster
+
+The application uses paymasters to sponsor the gas fees of user transactions. This is accomplished using the `useSendCalls` hook from the thirdweb SDK.
+
+## Under the Hood of Coinbase Smart Wallet
+
+Coinbase Smart Wallet combines several account abstraction techniques to operate under the hood. It uses ERC-4337 account abstraction, which allows the gas fee of a transaction to be "sponsored" (paid for) by a different wallet than the one submitting the transaction.
